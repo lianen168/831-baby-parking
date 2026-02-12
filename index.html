@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>831.baby - I LOVE YOU (8 Letters, 3 Words, 1 Meaning)</title>
+    <style>
+        :root {
+            /* Palette: Mystery Purple, Love Pink, Pure White */
+            --mystery-purple: #6c5ce7;
+            --love-pink: #fd79a8;
+            --deep-bg: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            --text-main: #2d3436;
+            --card-white: #ffffff;
+            --accent-gold: #fdcb6e;
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background: var(--deep-bg);
+            color: var(--text-main);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* --- Header Section --- */
+        header {
+            text-align: center;
+            padding: 4rem 1rem 2rem;
+            position: relative;
+        }
+
+        .domain-title {
+            font-size: clamp(3rem, 10vw, 7rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+            cursor: default;
+        }
+
+        /* Effect 1: 831 - Digital Decode (The Code of Love) */
+        .num-part {
+            display: inline-block;
+            background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: decodeGlitch 2s infinite alternate;
+            letter-spacing: -2px;
+        }
+
+        /* Effect 2: .baby - Heartbeat Glow (The Object of Affection) */
+        .tld-part {
+            display: inline-block;
+            color: var(--love-pink);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            animation: heartbeatGlow 1.5s ease-in-out infinite;
+        }
+
+        @keyframes decodeGlitch {
+            0% { opacity: 0.8; transform: scale(1); filter: blur(0px); }
+            50% { opacity: 1; transform: scale(1.02); filter: blur(1px); text-shadow: 0 0 10px rgba(108, 92, 231, 0.5); }
+            100% { opacity: 0.8; transform: scale(1); filter: blur(0px); }
+        }
+
+        @keyframes heartbeatGlow {
+            0% { transform: scale(1); text-shadow: 0 0 0 rgba(253, 121, 168, 0); }
+            15% { transform: scale(1.1); text-shadow: 0 0 10px rgba(253, 121, 168, 0.6); }
+            30% { transform: scale(1); text-shadow: 0 0 0 rgba(253, 121, 168, 0); }
+            45% { transform: scale(1.1); text-shadow: 0 0 10px rgba(253, 121, 168, 0.6); }
+            100% { transform: scale(1); text-shadow: 0 0 0 rgba(253, 121, 168, 0); }
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: var(--mystery-purple);
+            font-weight: 300;
+            margin-top: 15px;
+            letter-spacing: 2px;
+        }
+
+        .sub-tagline {
+            font-size: 1rem;
+            color: #636e72;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        /* --- Canvas Visualization --- */
+        #visual-wrapper {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: #000; /* Dark background to make "I LOVE YOU" pop */
+            overflow: hidden;
+            margin-bottom: 3rem;
+            border-top: 4px solid var(--love-pink);
+            border-bottom: 4px solid var(--mystery-purple);
+        }
+
+        canvas {
+            display: block;
+        }
+
+        .visual-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.2);
+            font-weight: bold;
+            letter-spacing: 5px;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        /* --- 8 Fields Grid --- */
+        .features-section {
+            padding: 2rem 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--text-main);
+        }
+        
+        .section-header h2 span {
+            color: var(--love-pink);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card-white);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #f1f2f6;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(108, 92, 231, 0.15);
+            border-color: var(--love-pink);
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            color: var(--mystery-purple);
+            margin-bottom: 0.8rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #636e72;
+            line-height: 1.6;
+        }
+
+        /* --- CTA Section --- */
+        .cta-container {
+            text-align: center;
+            padding: 6rem 1rem;
+            background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(253,121,168,0.1) 100%);
+        }
+
+        .price-display {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--mystery-purple);
+            margin-bottom: 2rem;
+        }
+
+        .price-display span {
+            font-size: 1.5rem;
+            color: #b2bec3;
+            font-weight: 400;
+        }
+
+        .buy-btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #6c5ce7, #fd79a8);
+            color: white;
+            padding: 1.2rem 4rem;
+            font-size: 1.3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(108, 92, 231, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-weight: bold;
+        }
+
+        .buy-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(108, 92, 231, 0.5);
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            background-color: #fff;
+            color: #999;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+        }
+
+        .email-copy {
+            color: var(--mystery-purple);
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        /* Toast */
+        #toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #2d3436;
+            color: #fff;
+            text-align: center;
+            border-radius: 4px;
+            padding: 16px;
+            position: fixed;
+            z-index: 100;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-size: 1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        #toast.show {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="domain-title">
+            <span class="num-part">831</span><span class="tld-part">.baby</span>
+        </div>
+        <div class="tagline">8 Letters, 3 Words, 1 Meaning</div>
+        <div class="sub-tagline">“I Love You” - 爱的极简方程式</div>
+    </header>
+
+    <!-- Canvas: Flowing "I LOVE YOU" -->
+    <div id="visual-wrapper">
+        <canvas id="loveCodeCanvas"></canvas>
+        <div class="visual-overlay">DECODING LOVE...</div>
+    </div>
+
+    <section class="features-section">
+        <div class="section-header">
+            <h2>💕 8大领域：解码爱的真谛 💕</h2>
+        </div>
+        
+        <div class="grid">
+            <!-- 1. The Code of Love -->
+            <div class="card">
+                <span class="icon">🔢</span>
+                <h3>爱的密码 (Love Code)</h3>
+                <p>831 是含蓄而深情的数字代码。它是属于你和TA之间的秘密暗号，代表着那句说不出口的深情。</p>
+            </div>
+            <!-- 2. Digital Confession -->
+            <div class="card">
+                <span class="icon">💌</span>
+                <h3>数字告白 (Confession)</h3>
+                <p>还在发普通的“我爱你”吗？发送 831.baby，用最极客、最浪漫的方式告诉TA：你是我唯一的宝贝。</p>
+            </div>
+            <!-- 3. Baby's Growth -->
+            <div class="card">
+                <span class="icon">👶</span>
+                <h3>宝贝成长 (Baby Growth)</h3>
+                <p>对孩子(.baby)的爱也是“831”。记录从出生到长大的每一个瞬间，汇聚成父母无言的爱。</p>
+            </div>
+            <!-- 4. Anniversary Surprise -->
+            <div class="card">
+                <span class="icon">🕯️</span>
+                <h3>纪念日惊喜 (Anniversary)</h3>
+                <p>在纪念日，把这个蕴含深意的域名作为礼物送给TA。这比鲜花更持久，比钻石更有故事。</p>
+            </div>
+            <!-- 5. Long Distance -->
+            <div class="card">
+                <span class="icon">🛰️</span>
+                <h3>异地相思 (Long Distance)</h3>
+                <p>当千言万语无法传递时，数字“831”穿越光缆，瞬间抵达。这是连接两颗心的最短路径。</p>
+            </div>
+            <!-- 6. Family Password -->
+            <div class="card">
+                <span class="icon">🔑</span>
+                <h3>家庭密令 (Family Pass)</h3>
+                <p>将 831.baby 设为家庭Wi-Fi密码或云相册入口。让“我爱你”成为打开家门的钥匙。</p>
+            </div>
+            <!-- 7. Proposal Website -->
+            <div class="card">
+                <span class="icon">💍</span>
+                <h3>求婚主页 (Proposal)</h3>
+                <p>“你愿意嫁给我吗？” 在 831.baby 的页面上写下这句话，这是通往幸福的唯一入口。</p>
+            </div>
+            <!-- 8. Emotional Asset -->
+            <div class="card">
+                <span class="icon">💎</span>
+                <h3>情感资产 (Asset)</h3>
+                <p>极短的数字域名，全球通用的含义。它是数字时代最保值的“爱情保险”。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-container">
+        <div class="price-display">$100 <span>USD</span></div>
+        <p style="margin-bottom: 2rem; color: #636e72;">8个字母 · 3个单词 · 1个决定</p>
+        
+        <!-- Spaceship Link - Opens in New Tab -->
+        <a href="https://www.spaceship.com/s/buy/831.baby/p3wbUZyBmXZQLXWC" target="_blank" class="buy-btn">
+            立即购买 · 拥有真爱
+        </a>
+    </section>
+
+    <footer>
+        <p>联系卖家: <span class="email-copy" onclick="copyEmail()">joshua369x@gmail.com</span></p>
+        <p>© 2026 831.baby | I Love You All Rights Reserved.</p>
+    </footer>
+
+    <div id="toast">邮箱已复制 (Email Copied)</div>
+
+    <script>
+        // --- Email Copy Function ---
+        function copyEmail() {
+            const email = "joshua369x@gmail.com";
+            navigator.clipboard.writeText(email).then(() => {
+                const toast = document.getElementById("toast");
+                toast.className = "show";
+                setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 2500);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+
+        // --- Canvas Animation: Flowing "I LOVE YOU" ---
+        const canvas = document.getElementById('loveCodeCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        let width, height;
+        let particles = [];
+        
+        // Symbols: 8, 3, 1, I, LOVE, YOU
+        const symbols = ['8', '3', '1', 'I', 'L', 'O', 'V', 'E', 'Y', 'O', 'U', '❤'];
+
+        function resize() {
+            width = canvas.width = canvas.parentElement.offsetWidth;
+            height = canvas.height = canvas.parentElement.offsetHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+            constructor() {
+                this.reset(true);
+            }
+
+            reset(initial = false) {
+                this.x = Math.random() * width;
+                // Start from bottom, float up like code stream or bubbles
+                this.y = initial ? Math.random() * height : height + 30;
+                
+                this.speed = 1.0 + Math.random() * 2.5; 
+                this.size = 12 + Math.random() * 20;
+                this.text = symbols[Math.floor(Math.random() * symbols.length)];
+                
+                // Colors: Neon Purple, Pink, Cyan
+                const rand = Math.random();
+                if (rand < 0.4) {
+                    this.color = `rgba(108, 92, 231, ${0.4 + Math.random()*0.6})`; // Purple
+                } else if (rand < 0.7) {
+                    this.color = `rgba(253, 121, 168, ${0.4 + Math.random()*0.6})`; // Pink
+                } else {
+                    this.color = `rgba(116, 185, 255, ${0.3 + Math.random()*0.5})`; // Cyan
+                }
+            }
+
+            update() {
+                this.y -= this.speed;
+                
+                // Glitch effect (horizontal shift)
+                if (Math.random() < 0.05) {
+                    this.x += (Math.random() - 0.5) * 10;
+                }
+
+                if (this.y < -40) {
+                    this.reset();
+                }
+            }
+
+            draw() {
+                ctx.font = `bold ${this.size}px "Courier New", monospace`; // Monospace for code look
+                ctx.fillStyle = this.color;
+                ctx.fillText(this.text, this.x, this.y);
+            }
+        }
+
+        // Initialize Particles
+        for (let i = 0; i < 120; i++) {
+            particles.push(new Particle());
+        }
+
+        function animate() {
+            // Create trails
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+            ctx.fillRect(0, 0, width, height);
+            
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+    </script>
+</body>
+</html>
